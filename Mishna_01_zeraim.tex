@@ -1,0 +1,82 @@
+\documentclass[14pt, a5paper, twoside, extrafontsizes]{memoir}
+
+\def \sederTitle{משניות סדר זרעים}
+\def \tractateTitle{סדר זרעים}
+\input{common}
+
+\begin{document}
+\frontmatter
+\pagestyle{myheadings}
+\thispagestyle{mytitlepage}
+\begin{hebrew}
+  \pagenumbering{arabic}
+{\Centering  
+
+  {\huge\bfseries משניות}
+  
+  {\LARGE\bfseries סדר זרעים}
+
+  \vspace{1em}
+
+  \vspace{0.5em}
+  על פי מהדורת הרב דוד אלטאראס ז״ל\\שהודפס בשנת ה׳תק״ע בעיר פיסא
+
+    \vspace{8em}
+    פה {\LARGE ירושלים} יע״א
+
+    {\small שנת}
+     סוד יי ליראיו
+    {\Large וׄבׄרׄיׄתׄוׄ לׄהׄוׄדׄיׄעׄםׄ}
+    {\small לפ״ק}
+    
+    \vspace{2em}
+  \includegraphics[width=10mm]{hatafSegolLogoNoText.png}\\
+  
+    \vspace{.5em}
+  {
+    \bfseries הוצאת חטף־סגול\\2022
+    
+ {\footnotesize  הובא לדפוס באמצעות \XeLaTeX\ ע״י שמעון מונטגיו}
+
+  }
+    
+}
+
+\input{introductions}
+\input{beginSeder}
+
+\vspace{2em}
+\sederContents{זרעים}{י״א}{{ברכות/berachot/9,
+    פאה/pea/8,
+    דמאי/demai/7,
+    כלאים/kilaim/9,
+    שביעית/sheviit/10,
+    תרומה/teruma/11,
+    מעשרות/maaserot/5,
+    מעשר~שני/maaserSheni/5,
+    חלה/halla/4,
+    ערלה/orla/3,
+    בכורים/bikkurim/3}}{ע״ד}
+
+\mainmatter
+  \pagenumbering{alph}
+\thispagestyle{empty}
+
+\input{01_01_berachot}
+\input{01_02_pea}
+\input{01_03_demai}
+\input{01_04_kilaim}
+\input{01_05_sheviit}
+\input{01_06_teruma}
+\input{01_07_maaserot}
+\input{01_08_maaser_sheni}
+\input{01_09_halla}
+\input{01_10_orla}
+\input{01_11_bikkurim}
+
+\input{endSeder}
+
+\tractatehead{~}{~} % I have no idea why, but without this line I get a
+                    % "counter too large" error
+\end{hebrew}
+\end{document}

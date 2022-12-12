@@ -1,0 +1,23 @@
+\usepackage{lettrine}
+
+% indentation of the first word on the first line after the drop capital
+\setlength{\DefaultFindent}{6pt}
+
+% extra indentation for the first word on the next line
+\setlength{\DefaultNindent}{0pt}
+
+\renewcommand*{\DefaultLoversize}{-.2}
+\renewcommand*{\DefaultLraise}{.6}
+\renewcommand{\LettrineTextFont}{\relax}
+
+\renewcommand*{\LettrineFont}{%
+ \LettrineFontHook
+ \fontsize{18pt}{18pt}%
+ \selectfont
+}
+
+% \leadword{first word [to be enlarged]}{second word}
+\newcommand{\leadword}[2]{%
+  \lettrine[realheight=true]{#1}{#2}
+}
+

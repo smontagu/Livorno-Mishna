@@ -1,0 +1,111 @@
+\newcounter{perekCount}
+\newcounter{halachaCount}[perekCount]
+\newcounter{tractateCount}
+\newcounter{perakim}
+
+% \tractatehead{title for printing}{hyperlink reference}
+\newcommand{\tractatehead}[2]{%
+ \cleardoublepage
+ \setcounter{perekCount}{0}
+ \thispagestyle{empty}
+ \def \tractateTitle{#1}
+{\centering\LARGE\bfseries \hypertarget{#2}{#1}
+
+  }}
+
+% \summarycontentsline{tractate name}{hyperlink reference}
+%                     {number of chapters [numeric]}
+\newcommand{\summarycontentsline}[3]{%
+\setcounter{perakim}{#3}%
+\stepcounter{tractateCount}%
+\textlarger{\alph{tractateCount}} \hyperlink{#2}{#1} \alph{perakim} פרקים\hdot%
+}
+
+\newcommand{\summarycontents}[1]{
+  \centerlastline
+  \foreach \linkText / \linkName / \numChapters in #1 {
+      \summarycontentsline{\linkText}{\linkName}{\numChapters}
+  } 
+}
+
+% \sederContents{title of seder}{number of tractates [hebrew]}
+%               {list of tractates}{total number of chapters [hebrew]}
+\newcommand{\sederContents}[4]{
+  {
+    \centering  
+    {\Large משניות סדר #1 }
+ 
+  יש בו #2 מסכתות וזהו סדורן
+
+    \begin{minipage}{0.9\textwidth}
+    \small
+    \summarycontents{#3}
+    בין הכל \textlarger[2]{#4} פרקים׃
+    \end{minipage}
+
+  }
+}
+
+\newcommand{\cheader}[1]{{\centering\small\bfseries{#1}
+
+  }}
+
+\newcommand{\sechead}[1]{%
+  \vspace{0.25em}
+  \needspace{3\baselineskip}
+  \cheader{#1}
+}
+
+\newcommand{\mispar}[1]{{\footnotesize\textsuperscript{\alph{#1}}}}
+
+% There is no Unicode character for the raised dot used in many Hebrew books
+% as mid-sentence punctuation. This is a hack to replace it using
+% U+005C4 HEBREW MARK UPPER DOT
+\newcommand{\hdot}{\raisebox{-0.45\height}{^^^^00a0^^^^05c4}\spacefactor=501{} }
+
+% \perek[tolerance]{first word}{second word}{rest of first halacha}
+% First halacha in a perek
+\newcommand{\perek}[4][0]{%
+ \stepcounter{perekCount}
+ \perekbar[#1]{#2}{#3}{#4}{פרק \alph{perekCount}}
+}
+  
+% \baraita[tolerance]{first word}{second word}{rest of first halacha}
+% First halacha in a baraita (e.g. after the last perek of Bikkurim)
+\newcommand{\baraita}[4][0]{%
+ \setcounter{halachaCount}{0}
+ \perekbar[#1]{#2}{#3}{#4}{ברייתא}
+}
+
+% \perekbar[tolerance]{first word}{second word}{rest of first halacha}{heading}
+% Called by \perek and \baraita
+\newcommand{\perekbar}[5][0]{%
+ \vspace{0.5em}
+ \stepcounter{halachaCount}
+ \needspace{2\baselineskip}
+ \cheader{#5}
+
+ \tolerance #1
+ \centerlastline
+ \leadword{#2}{#3}
+ #4
+}
+
+% \halacha[tolerance]{text}
+% Prints a halacha
+\newcommand{\halacha}[2][0]{%
+ \tolerance #1
+ \stepcounter{halachaCount}
+ \mispar{halachaCount}
+ \centerlastline
+ #2\nowidow
+}
+
+\newcommand{\selik}{~~{\footnotesize סליק}}
+
+\newenvironment{tp}[1]{% tolerant paragraph}
+  \par\tolerance=#1\relax
+}{%
+  \par
+}
+

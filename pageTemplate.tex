@@ -1,0 +1,39 @@
+\usepackage{graphicx}
+\usepackage{pgffor}
+\usepackage{anysize}
+\usepackage[all]{nowidow}
+\usepackage{relsize}
+\usepackage{ragged2e}
+
+\usepackage[pdfauthor={יהודה הנשיא},
+  pdftitle={משניות},
+  pdfsubject={תורה שבעל פה},
+  pdfproducer={סיימון מונטגיו, הוצאת חטף סגול},
+  pdfdirection=R2L,
+  pdfcreator=xelatex,
+  colorlinks=false, linkcolor=blue,
+  linkbordercolor={.6 .6 .6},
+  plainpages=true]{hyperref}
+\makeatletter
+\Hy@AtBeginDocument{%
+  % Override border definition set with colorlinks=true
+  \def\@pdfborder{0 0 1}
+  % Overrides border style set with colorlinks=true
+  % Hyperlink border style will be underline of width 1pt
+  \def\@pdfborderstyle{/S/U/W 1}
+}
+\makeatother
+
+\usepackage{polyglossia}
+\setmainlanguage[numerals=hebrew]{hebrew}
+\setmainfont{SBL Hebrew}
+\setotherlanguage{english}
+
+% General formatting
+\marginsize{1.2in}{.8in}{.5in}{.5in}
+\renewcommand{\baselinestretch}{1.1}
+\parskip 8pt
+\parindent 0pt
+\makeevenhead{myheadings}{\texthebrew{\sederTitle}}{}{\thepage}
+\makeoddhead{myheadings}{\thepage}{}{\texthebrew{\tractateTitle}}
+\makepagestyle{mytitlepage}

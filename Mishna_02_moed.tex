@@ -1,0 +1,87 @@
+\documentclass[14pt, a5paper, twoside, extrafontsizes]{memoir}
+
+\def \sederTitle{משניות סדר מועד}
+\def \tractateTitle{סדר מועד}
+\input{common}
+
+\begin{document}
+\frontmatter
+\pagestyle{myheadings}
+\thispagestyle{mytitlepage}
+\begin{hebrew}
+  \pagenumbering{arabic}
+{\Centering  
+
+  {\huge\bfseries משניות}
+  
+  {\LARGE\bfseries סדר מועד}
+
+  \vspace{1em}
+
+  \vspace{0.5em}
+  על פי מהדורת הרב דוד אלטאראס ז״ל\\שהודפס בשנת ה׳תק״ע בעיר פיסא
+
+    \vspace{8em}
+    פה {\LARGE ירושלים} יע״א
+
+    {\small שנת}
+     סוד יי ליראיו
+    {\Large וׄבׄרׄיׄתׄוׄ לׄהׄוׄדׄיׄעׄםׄ}
+    {\small לפ״ק}
+    
+    \vspace{2em}
+  \includegraphics[width=10mm]{hatafSegolLogoNoText.png}\\
+  
+    \vspace{.5em}
+  {
+    \bfseries הוצאת חטף־סגול\\2022
+    
+ {\footnotesize  הובא לדפוס באמצעות \XeLaTeX\ ע״י שמעון מונטגיו}
+
+  }
+    
+}
+
+\input{beginSeder}
+\vspace{1em}
+{
+\parskip 2pt
+\sederContents{מועד}{י״ב}{{שבת/shabbat/24,
+    עירובין/eruvin/10,
+    פסחים/pesahim/10,
+    חגיגה/hagiga/3,
+    ביצה/besa/5,
+    מועד~קטן/moedKatan/3,
+    ראש~השנה/roshHashana/4,
+    יומא/yoma/5,
+    סוכה/sukka/5,
+    תענית/taanit/4,
+    שקלים/shekalim/8,
+    מגילה/megilla/4}}{פ״ח}
+
+
+\vspace{4pt}
+{ \small
+ {\larger  אבל} כפי סדר תוספת יום טוב כך הוא\hdot
+    שבת\hdot ערובין\hdot שקלים\hdot יומא\hdot סוכה\hdot ביצה\hdot ראש השנה\hdot
+    תענית\hdot מגילה\hdot מועד קטן\hdot חגיגה\hdot ואלו ואלו דברי אלהים חיים׃}
+}
+\mainmatter
+\pagenumbering{alph}
+\thispagestyle{empty}
+
+\input{02_01_shabbat}
+\input{02_02_eruvin}
+\input{02_03_pesahim}
+\input{02_04_hagiga}
+\input{02_05_besa}
+\input{02_06_moed_katan}
+\input{02_07_rosh_hashana}
+\input{02_08_yoma}
+\input{02_09_sukka}
+\input{02_10_taanit}
+\input{02_11_shekalim}
+\input{02_12_megilla}
+
+\end{hebrew}
+\end{document}

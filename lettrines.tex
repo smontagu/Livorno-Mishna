@@ -1,13 +1,17 @@
 \usepackage{lettrine}
 
 % indentation of the first word on the first line after the drop capital
-\setlength{\DefaultFindent}{6pt}
+\setlength{\DefaultFindent}{5pt}
 
 % extra indentation for the first word on the next line
-\setlength{\DefaultNindent}{0pt}
+\setlength{\DefaultNindent}{6pt}
 
 \renewcommand*{\DefaultLoversize}{-.2}
 \renewcommand*{\DefaultLraise}{.6}
+\renewcommand*{\LettrineSecondString}{שׁ} % align the enlarged word to the
+                                         % height of the dot on a shin (this
+                                         % looks a little better than aligning
+                                         % to the roof of the letters)
 \renewcommand{\LettrineTextFont}{\relax}
 
 \renewcommand*{\LettrineFont}{%
@@ -17,7 +21,7 @@
 }
 
 % \leadword{first word [to be enlarged]}{second word}
-\newcommand{\leadword}[2]{%
-  \lettrine[realheight=true]{#1}{#2}
+\newcommand{\leadword}[1]{%
+  \lettrine[realheight=true]{#1}{}
 }
 

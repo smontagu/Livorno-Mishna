@@ -63,32 +63,31 @@
 % U+005C4 HEBREW MARK UPPER DOT
 \newcommand{\hdot}{\raisebox{-0.45\height}{^^^^00a0^^^^05c4}\spacefactor=501{} }
 
-% \perek[tolerance]{first word}{second word}{rest of first halacha}
+% \perek[tolerance]{first word}{rest of first halacha}
 % First halacha in a perek
-\newcommand{\perek}[4][0]{%
+\newcommand{\perek}[3][0]{%
  \stepcounter{perekCount}
- \perekbar[#1]{#2}{#3}{#4}{פרק \alph{perekCount}}
+ \perekbar[#1]{#2}{#3}{פרק \alph{perekCount}}
 }
   
-% \baraita[tolerance]{first word}{second word}{rest of first halacha}
+% \baraita[tolerance]{first word}{rest of first halacha}
 % First halacha in a baraita (e.g. after the last perek of Bikkurim)
-\newcommand{\baraita}[4][0]{%
+\newcommand{\baraita}[3][0]{%
  \setcounter{halachaCount}{0}
- \perekbar[#1]{#2}{#3}{#4}{ברייתא}
+ \perekbar[#1]{#2}{#3}{ברייתא}
 }
 
 % \perekbar[tolerance]{first word}{second word}{rest of first halacha}{heading}
 % Called by \perek and \baraita
-\newcommand{\perekbar}[5][0]{%
+\newcommand{\perekbar}[4][0]{%
  \vspace{0.5em}
  \stepcounter{halachaCount}
  \needspace{2\baselineskip}
- \cheader{#5}
+ \cheader{#4}
 
  \tolerance #1
  \centerlastline
- \leadword{#2}{#3}
- #4
+ \leadword{#2}#3
 }
 
 % \halacha[tolerance]{text}

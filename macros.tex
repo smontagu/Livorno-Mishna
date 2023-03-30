@@ -46,14 +46,23 @@
   }
 }
 
-\newcommand{\cheader}[1]{{\centering\small\bfseries{#1}
+% centered rubric
+\newcommand{\crubric}[1]{{\centering\small\bfseries{#1}
 
   }}
 
-\newcommand{\sechead}[1]{%
+% centered header (keep with next paragraph)
+\newcommand{\chead}[1]{%
   \vspace{0.25em}
   \needspace{3\baselineskip}
-  \cheader{#1}
+  \crubric{#1}
+}
+
+% centered footer
+\newcommand{\cfoot}[1]{%
+  \vspace{0.25em}
+  \needspace{3\baselineskip}
+  \crubric{#1}
 }
 
 \newcommand{\mispar}[1]{{\footnotesize\textsuperscript{\alph{#1}}}}
@@ -83,7 +92,7 @@
  \vspace{0.5em}
  \stepcounter{halachaCount}
  \needspace{2\baselineskip}
- \cheader{#4}
+ \crubric{#4}
 
  \tolerance #1
  \centerlastline

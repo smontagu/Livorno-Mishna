@@ -69,7 +69,8 @@
 % There is no Unicode character for the raised dot used in many Hebrew books
 % as mid-sentence punctuation. This is a hack to replace it using
 % U+005C4 HEBREW MARK UPPER DOT
-\newcommand{\hdot}{\raisebox{-0.45\height}{^^^^00a0^^^^05c4}\spacefactor=501{} }
+\sfcode`\^^^^05c43000
+\newcommand{\hdot}{\raisebox{-0.5\height}{^^^^2009^^^^2009^^^^05c4} }
 
 \tolerance=8192
 

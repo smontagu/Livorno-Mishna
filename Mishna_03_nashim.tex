@@ -1,0 +1,79 @@
+\documentclass[14pt, a5paper, twoside, extrafontsizes]{memoir}
+
+\def \sederTitle{משניות סדר נשים}
+\def \tractateTitle{סדר נשים}
+\input{common}
+
+\begin{document}
+\frontmatter
+\pagestyle{myheadings}
+\thispagestyle{mytitlepage}
+\begin{hebrew}
+  \pagenumbering{arabic}
+{\Centering  
+
+  {\huge\bfseries משניות}
+  
+  {\LARGE\bfseries סדר נשים}
+
+  \vspace{1em}
+
+  \vspace{0.5em}
+  על פי מהדורת הרב דוד אלטאראס ז״ל\\שהודפס בשנת ה׳תק״ע בעיר פיסא
+
+    \vspace{8em}
+    פה {\LARGE ירושלים} יע״א
+
+    {\small שנת}
+    {\Large דׄוׄבׄרׄ שׄלׄוׄםׄ לׄכׄלׄ עׄמׄוׄ}
+    {\small לפ״ק}
+    
+    \vspace{2em}
+  \includegraphics[width=10mm]{hatafSegolLogoNoText.png}\\
+  
+    \vspace{.5em}
+  {
+    \bfseries הוצאת חטף־סגול\\2023
+    
+ {\footnotesize  הובא לדפוס באמצעות \XeLaTeX\ ע״י שמעון מונטגיו}
+
+  }
+    
+}
+
+\input{beginSeder}
+\vspace{1em}
+{
+\parskip 2pt
+\sederContents{נשים}{ז׳}{{יבמות/yebamot/16,
+  כתובות//13,
+  קדושין//12,
+  גיטין//9,
+  סוטה//9,
+  נדרים//11,
+  נזיר//9}}{ע״א}
+
+
+\vspace{4pt}
+       { \centering
+         \small
+  {\larger  אבל} כפי סדר תוספת יום טוב כך הוא\\
+  יבמות\hdot כתובות\hdot נדרים\hdot נזיר\hdot סוטה\hdot גיטין\hdot קדושין\\
+  אבל הר״ם סידר גיטין אחר נזיר\\
+  ואלו ואלו דברי אלהים חיים׃}
+     
+}
+\mainmatter
+\thispagestyle{empty}
+
+\input{03_01_yebamot}
+
+%\def \sederCount{שלישי}
+%\input{endSeder}
+%
+%{\centering
+%  \LARGE תם ונשלם ספר שלישי\\שבחי תודה לאלהי ישעי
+%}
+
+\end{hebrew}
+\end{document}

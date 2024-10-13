@@ -28,20 +28,20 @@
   } 
 }
 
-% \sederContents{title of seder}{number of tractates [hebrew]}
+% \sederContents{number of tractates [hebrew]}
 %               {list of tractates}{total number of chapters [hebrew]}
-\newcommand{\sederContents}[4]{
+\newcommand{\sederContents}[3]{
   {
-    \centering  
-    {\Large משניות סדר #1 }
- 
-  יש בו #2 מסכתות וזהו סדורן
+    \centering
+    {\Large משניות \sederTitle}
+
+  יש בו #1 מסכתות וזהו סדורן
 
     \begin{minipage}{0.9\textwidth}
     \small
-    \summarycontents{#3}
-    
-    בין הכל \textlarger[2]{#4} פרקים׃
+    \summarycontents{#2}
+
+    בין הכל \textlarger[2]{#3} פרקים׃
     \end{minipage}
 
   }
@@ -112,14 +112,14 @@
 
 \newcommand{\selik}{~~{\footnotesize סליק}}
 
-% chronogram
-% Gregorian year
+% \titlepage{Hebrew chronogram for year of issue}
+%           {Gregorian year of issue}
 \newcommand{\titlepage}[2]{%
 \Centering
 
   {\huge\bfseries משניות}
 
-  {\LARGE\bfseries\tractateTitle}
+  {\LARGE\bfseries\sederTitle}
 
   \vspace{1em}
 

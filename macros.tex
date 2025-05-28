@@ -143,3 +143,32 @@
   }
 
 }
+
+% code for special handling of specific numbers by "Circumscribe" copied from https://tex.stackexchange.com/questions/300008/modify-specific-hebrew-alpha-numerals-on-page-number
+% with a few modifications to the function names
+\makeatletter
+\let\@hebrew@numeral@usual\@hebrew@numeral  %% <- store old definition
+\newcommand*\@hebrew@numeral@special[1]{%   %% <- new definition
+  \ifcsdef{specialnum@\number#1}            %% <- if this number is listed
+    {\csuse{specialnum@\number#1}}          %% <- give it special handling
+    {\@hebrew@numeral@usual{#1}}%           %% <- otherwise use usual handling
+}
+\let\@hebrew@numeral\@hebrew@numeral@special %% <- replace old definition
+\makeatother
+
+%% Declare numbers for special handling:
+\newcommand*\newspecialnum[2]{\csdef{specialnum@#1}{#2}}
+\newspecialnum{16}{יו}    % At least some Livorno printings don't use טז for 16
+\newspecialnum{116}{קיו}
+\newspecialnum{216}{ריו}
+\newspecialnum{316}{שיו}
+\newspecialnum{416}{תיו}
+\newspecialnum{516}{תקיו}
+\newspecialnum{616}{תריו}
+\newspecialnum{716}{תשיו}
+\newspecialnum{816}{תתיו}
+\newspecialnum{916}{תתקיו}
+\newspecialnum{18}{חי}    % Add some other "specials" while we're here
+\newspecialnum{270}{ער}
+\newspecialnum{272}{ערב}
+\newspecialnum{275}{ערה}

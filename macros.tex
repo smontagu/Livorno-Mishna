@@ -81,24 +81,26 @@
  \stepcounter{perekCount}
  \perekbar{פרק \alph{perekCount}}{#1}{#2}
 }
-  
-% \baraita{first word}{rest of first halacha}
+
+% \baraita[subhead]{first word}{rest of first halacha}
 % First halacha in a baraita (e.g. after the last perek of Bikkurim)
-\newcommand{\baraita}[2]{%
+\newcommand{\baraita}[3][]{%
  \setcounter{halachaCount}{0}
- \perekbar{ברייתא}{#1}{#2}
+ \perekbar[#1]{ברייתא}{#2}{#3}
 }
 
-% \perekbar{heading}{first word}{rest of first halacha}
+% \perekbar[subhead]{heading}{first word}{rest of first halacha}
 % Called by \perek and \baraita
-\newcommand{\perekbar}[3]{%
+\newcommand{\perekbar}[4][]{%
  \vspace{0.5em}
  \stepcounter{halachaCount}
  \needspace{2\baselineskip}
- \crubric{#1}
+ \crubric{#2}
 
  \centerlastline
- \leadword{#2}#3
+ #1
+
+ \leadword{#3}#4
 }
 
 % \halacha{text}

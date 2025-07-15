@@ -1,0 +1,65 @@
+\documentclass[14pt, a5paper, twoside, extrafontsizes]{memoir}
+
+\def \sederTitle{סדר קדשים}
+\def \tractateTitle{\sederTitle} % for running heads until the first tractate
+\input{common}
+
+\begin{document}
+\frontmatter
+\pagestyle{myheadings}
+\thispagestyle{mytitlepage}
+\begin{hebrew}
+  \pagenumbering{arabic}
+  \titlepage{ונשלמ{\Large הׄ} פרים {\Large שׄפׄתׄ}נו}
+    {2025}
+\input{beginSeder}
+\vspace{1em}
+{
+\parskip 2pt
+\sederContents{י״א}{
+  {זבחים/zebahim/14,
+    מנחות//13,
+    חולין//12,
+    בכורות//9,
+    ערכין//9,
+    תמורה//6,
+    כריתות//6,
+    מעילה//6,
+    תמיד//7,
+    מדות//5,
+    קנים//3}}{צ״א}
+
+
+\vspace{4pt}
+ { \centering
+   \small
+       {\larger  ויש} מסדרים קנים קודם מדות והכל עולה בקנה אחד}
+
+}
+\mainmatter
+\thispagestyle{empty}
+
+
+\input{05_01_zebahim}
+%\input{05_02_menahot}
+%\input{05_03_holin}
+%\input{05_04_bechorot}
+%\input{05_05_arachin}
+%\input{05_06_temura}
+%\input{05_07_keritot}
+%\input{05_08_meila}
+%\input{05_09_tamid}
+%\input{05_10_midot}
+%\input{05_11_kinim}
+
+\input{hadran}
+
+%\def \sederCount{חמישי}
+%\input{endSeder}
+%
+%{\centering
+%  \LARGE תם ונשלם ספר חמישי\\שבחי תודה לצור קדשי
+%}
+
+\end{hebrew}
+\end{document}

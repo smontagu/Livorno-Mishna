@@ -6,22 +6,19 @@
 % extra indentation for the first word on the next line
 \setlength{\DefaultNindent}{4pt}
 
-\renewcommand*{\DefaultLoversize}{-.2}
-\renewcommand*{\DefaultLraise}{.6}
+\renewcommand*{\DefaultLoversize}{-.5}
+\renewcommand*{\DefaultLraise}{.625}
+\renewcommand*{\LettrineTestString}{קבל} % Use a Hebrew string to size
+                                         % the enlarged word instead of
+                                         % the default
 \renewcommand*{\LettrineSecondString}{שׁ} % align the enlarged word to the
                                          % height of the dot on a shin (this
                                          % looks a little better than aligning
                                          % to the roof of the letters)
 \renewcommand{\LettrineTextFont}{\relax}
 
-\renewcommand*{\LettrineFont}{%
- \LettrineFontHook
- \fontsize{18pt}{18pt}%
- \selectfont
-}
-
 % \leadword{first word [to be enlarged]}{second word}
 \newcommand{\leadword}[1]{%
-  \lettrine{#1}{}
+  \lettrine[lines=2]{#1}{}
 }
 

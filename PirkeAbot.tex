@@ -1,0 +1,143 @@
+\documentclass[12pt, a5paper, twoside, extrafontsizes]{memoir}
+
+\input{lettrines}
+\renewcommand*{\DefaultLoversize}{-.4}
+\renewcommand*{\DefaultLraise}{.625}
+\renewcommand{\leadword}[1]{%
+  \lettrine[lines=2]{#1}{}
+}
+
+\input{AbotTemplate}
+\input{macros}
+\tolerance=8192
+\sfcode`\^^^^e0103000
+
+\renewcommand{\hdot}{\textenglish{^^^^2009}^^^^e010 }
+
+\renewcommand{\tractatehead}[2]{%
+ \cleardoublepage
+ \setcounter{perekCount}{0}
+}
+
+\newcommand{\beforePerek}{%
+  \centerlastline
+  כָּל יִשְׂרָאֵל יֵשׁ לָהֶם חֵלֶק לְעוֹלָם הַבָּא\hdot
+  שֶׁנֶּאֱמַר וְעַמֵּךְ כֻּלָּם צַדִּיקִים\hdot
+  לְעוֹלָם יִירְשׁוּ אָרֶץ\hdot
+  נֵצֶר מַטָּעַי מַעֲשֵׂה יָדַי לְהִתְפָּאֵר׃
+}
+
+\newcommand{\afterPerek}{%
+    רִבִּי חֲנַנְיָא בֶן עֲקַשְׁיָא אוֹמֵר רָצָה הַקָּדוֹשׁ בָּרוּךְ הוּא לְזַכּוֹת אֶת יִשְׂרָאֵל\hdot
+  לְפִיכַךְ הִרְבָּה לָהֶם תּוֹרָה וּמִצְוֺת\hdot
+  שֶׁנֶּאְמַר יְיָ חָפֵץ לְמַעַן צִדְקוֹ יַגְדִּיל תּוֹרָה וְיַאְדִּיר׃
+}
+
+\newcommand{\para}[2]{\leadword{#1}#2}
+
+\renewcommand{\perek}[2]{%
+ \perekbar{פרק \alph{perekCount}}{#1}{#2}
+}
+
+\renewcommand{\baraita}[3][]{%
+ \perekbar[#1]{פרק \alph{perekCount}}{#2}{#3}
+}
+
+\renewcommand{\perekbar}[4][]{%
+  \ifnum0<\value{perekCount}
+    \afterPerek
+    \cleardoublepage
+  \fi
+  \stepcounter{perekCount}
+  \thispagestyle{simple}
+  \beforePerek
+  \stepcounter{halachaCount}
+  \needspace{2\baselineskip}
+            {\centering\Large\bfseries{#2}
+
+            }
+
+            #1
+
+            \leadword{#3}#4
+}
+\renewcommand{\selik}{}
+
+\begin{document}
+\larger[1]
+\frontmatter
+\pagestyle{myheadings}
+\thispagestyle{mytitlepage}
+\pagenumbering{arabic}
+{
+  \Centering
+      {\Huge\bfseries פרקי אבות}
+      
+      \large
+      \vspace{2.5em}
+      על פי מהדורת המשניות של הרב דוד אלטאראס ז״ל\\
+      שהודפס בשנת ה׳תק״ע בעיר פיסא
+
+      \vspace{8em}
+      פה {\huge ירושלים} יע״א
+
+      שנת {\LARGE משה} קבל {\LARGE ת}ור{\LARGE ה מ}סיני
+      לפ״ק
+
+      \vspace{2em}\
+
+      \includegraphics[width=10mm]{hatafSegolLogoNoText.png}\\
+
+      \vspace{.5em}
+             {
+               \bfseries הוצאת חטף־סגול\\2025
+
+               {\footnotesize  הובא לדפוס באמצעות
+                 \textenglish{\XeLaTeX\ }
+                 ע״י שמעון מונטגיו}
+
+             }
+}
+
+\mainmatter
+\setcounter{perekCount}{0}
+\setcounter{halachaCount}{0}
+
+\input{04_09_abot}
+
+\clearpage
+    {
+      \center ואמרים קדיש על ישראל
+
+    }
+
+    \para{יִתְגַּדַּל}{וְיִתְקַדַּשׁ שְׁמֵיהּ רַבָּא׃ ({\smaller אמן})
+      בְּעָלְמָא דִּי בְרָא כִּרְעוּתֵיהּ\hdot
+      וְיַמְלִיךְ מַלְכוּתֵיהּ\hdot
+      וְיַצְמַח פּוּרְקָנֵהּ\hdot
+      וִיקָרֵב מְשִׁיחֵיהּ׃ ({\smaller אמן})
+      בְּחַיֵּיכוֹן וּבְיוֹמֵיכוֹן וּבְחַיֵּי דְכָל בֵּית יִשְׂרָאֵל בַּעֲגָלָא
+      וּבִזְמַן קָרִיב וְאִמְרוּ אָמֵן׃}
+
+    \para{יְהֵא}{שְׁמֵיהּ רַבָּא מְבָרַךְ\hdot
+      לְעָלַם לְעָלְמֵי עָלְמַיָּא יִתְבָּרַךְ׃ וְיִשְׁתַּבַּח\hdot
+      וְיִתְפָּאַר\hdot וְיִתְרוֹמַם\hdot וְיִתְנַשֵּׂא\hdot וְיִתְהַדָּר\hdot וְיִתְעַלֶּה\hdot
+      וְיִתְהַלָּל\hdot  שְׁמֵהּ דְּקוּדְשָׁא בְּרִיךְ הוּא׃ ({\smaller אמן})
+      לְעֵילָא מִן כָּל בִּרְכָתָא\hdot שִׁירָתָא\hdot תִּשְׁבְּחָתָא\hdot וְנֶחָמָתָא\hdot
+      דַּאֲמִירָן בְּעָלְמָא\hdot וְאִמְרוּ אָמֵן׃}
+
+    \para{עַל}{יִשְׂרָאֵל\hdot וְעַל רַבָּנָן\hdot וְעַל תַּלְמִידֵיהון\hdot
+      וְעַל כָּל תַּלְמִידֵי תַלְמִידֵיהון דְּעָסְקִין בְּאורַיְתָא קַדִּשְׁתָּא\hdot
+      דִּי בְאַתְרָא הָדֵין\hdot וְדִי בְכָל אָתָר וְאָתָר\hdot יְהֵא לָנָא וּלְהון\hdot
+      חִנָּא\hdot וְחִסְדָּא\hdot וְרַחֲמֵי\hdot מִן קֳדָם מָארֵיהּ שְׁמַיָּא וְאַרְעָא\hdot
+      וְאִמְרוּ אָמֵן׃}
+
+    \para{יְהֵא}{שְׁלָמָא רַבָּא מִן שְׁמַיָּא ({\smaller חיים}) חַיִּים\hdot וְשָׂבָע\hdot
+      וִישׁוּעָה\hdot וְנֶחָמָה\hdot וְשֵׁיזָבָא\hdot וּרְפוּאָה\hdot
+      וּגְאוּלָה\hdot וּסְלִיחָה\hdot וְכַפָּרָה\hdot וְרֶוַח\hdot וְהַצָּלָה\hdot
+      לָנוּ\hdot וּלְכָל עַמּוֹ יִשְׂרָאֵל\hdot וְאִמְרוּ אָמֵן׃}
+
+    עֹשֶׂה שָׁלוֹם בִּמְרוֹמָיו\hdot הוּא בְּרַחֲמָיו יַעֲשֶׂה שָׁלוֹם עָלֵינוּ\hdot
+    וְעַל כָּל יִשְׂרָאֵל\hdot וְאִמְרוּ אָמֵן׃
+
+\end{document}

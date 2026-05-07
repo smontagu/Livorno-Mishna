@@ -1,0 +1,81 @@
+\documentclass[14pt, a5paper, twoside, extrafontsizes]{memoir}
+
+\def \sederTitle{סדר טהרות}
+\def \tractateTitle{\sederTitle} % for running heads until the first tractate
+\input{common}
+
+\begin{document}
+\frontmatter
+\pagestyle{myheadings}
+\thispagestyle{mytitlepage}
+\begin{hebrew}
+  \pagenumbering{arabic}
+  \titlepage{{\Large ו}ז{\Large רקתי}
+    {\Large ע}ליכם
+    מים טהורים וטהרתם}
+    {2026}
+\input{beginSeder}
+\vspace{1em}
+{
+\parskip 2pt
+\sederContents{י״ב}{
+  {מקואות//10,
+    פרה//12,
+    ידים//4,
+    אהלות//18,
+    נגעים//14,
+    זבים//5,
+    נדה//10,
+    טהרות//10,
+    כלים/kelim/30,
+    טבול יום//4,
+    מכשירין//6,
+    עוקצין//3}}{קכ״ו}
+
+
+\vspace{4pt}
+ { \centering
+   \small
+       {\larger ובעל} תוספת יום טוב סדרן באופן אחר וזהו מסכת כלים\hdot
+אהלות\hdot
+נגעים\hdot
+פרה\hdot
+טהרות\hdot
+מקואות\hdot
+נדה\hdot
+מכשירין\hdot
+זבים\hdot
+טבול יום\hdot
+ידים\hdot
+עוקצין\hdot
+ואלו ואלו דברי אלהים חיים:}
+
+}
+\mainmatter
+\thispagestyle{empty}
+
+
+%\input{06_01_mikvaot}
+%\input{06_02_para}
+%\input{06_03_yadayim}
+%\input{06_04_ohalot}
+%\input{06_05_negaim}
+%\input{06_06_zavim}
+%\input{06_07_nidda}
+%\input{06_08_taharot}
+\input{06_09_kelim}
+%\input{06_10_tevul_yom}
+%\input{06_11_machshirin}
+%\input{06_12_uksin}
+
+\input{hadran}
+
+%\def \sederCount{ששי}
+%\input{endSeder}
+
+%{\centering
+%  \LARGE תם ונשלם ספר ששי\\שבחי תודה למטהר פשעי
+%}
+
+\end{hebrew}
+\end{document}
